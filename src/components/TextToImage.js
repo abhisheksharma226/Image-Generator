@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Loader } from "lucide-react"; // For loading animation (make sure you have Lucide installed)
 
 const token = process.env.REACT_APP_HF_TOKEN; // Access from env
-const model = process.env.HF_model;
 
 const TextToImage = () => {
   const [text, setText] = useState("");
@@ -15,7 +14,7 @@ const TextToImage = () => {
 
     try {
       const response = await fetch(
-        `${model}`,
+        "https://api-inference.huggingface.co/models/kothariyashhh/GenAi-Texttoimage",
         {
           method: "POST",
           headers: {
